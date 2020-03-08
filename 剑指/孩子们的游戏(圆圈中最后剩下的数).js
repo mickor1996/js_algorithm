@@ -3,13 +3,13 @@
 
 // 如果没有小朋友，请返回-1
 function LastRemaining_Solution(n, m) {
+  if (!n) return -1
   // write code here
   let l = []
   for (let i = 0; i < n; i++) {
     l.push(i)
   }
   while (l.length > 1) {
-    let a = l.slice(m % l.length, l.length)
     l = l.slice(m % l.length == 0 ? m : m % l.length, l.length).concat(l.slice(0, m % l.length - 1))
   }
   return l[0]
