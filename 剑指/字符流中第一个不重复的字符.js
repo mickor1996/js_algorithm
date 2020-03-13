@@ -3,11 +3,11 @@
 // 输出描述:
 // 如果当前字符流没有存在出现一次的字符，返回#字符。
 //Init module if you need
+const map = new Map()
 function Init() {
   // write code here
-
+  map.clear()
 }
-const map = new Map()
 //Insert one char from stringstream
 function Insert(ch) {
   // write code here
