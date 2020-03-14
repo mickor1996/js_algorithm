@@ -18,7 +18,7 @@ function judge(tree_1, tree_2) {
     if (tree_1.val != tree_2.val) {
       return false
     } else {
-      return judge(tree_1.left, tree_2.right) && judge(tree_1.right.tree_2.left)
+      return judge(tree_1.left, tree_2.right) && judge(tree_1.right, tree_2.left)
     }
   }
 }
