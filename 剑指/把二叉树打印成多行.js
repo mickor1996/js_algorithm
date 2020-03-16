@@ -12,25 +12,27 @@ function Print(pRoot) {
   let l2 = []
   let l = []
   l1.push(pRoot)
-  while (l1.length) {
-    let node = l1.shift()
-    l.push(node.val)
-    if (node.left) l2.push(node.left)
-    if (node.right) l2.push(node.right)
-  }
-  if (l.length) {
-    list.push(l)
-    l = []
-  }
-  while (l2.length) {
-    let node = l2.shift()
-    l.push(node.val)
-    if (node.left) l1.push(node.left)
-    if (node.right) l1.push(node.right)
-  }
-  if (l.length) {
-    list.push(l)
-    l = []
+  while (l1.length || l2.length) {
+    while (l1.length) {
+      let node = l1.shift()
+      l.push(node.val)
+      if (node.left) l2.push(node.left)
+      if (node.right) l2.push(node.right)
+    }
+    if (l.length) {
+      list.push(l)
+      l = []
+    }
+    while (l2.length) {
+      let node = l2.shift()
+      l.push(node.val)
+      if (node.left) l1.push(node.left)
+      if (node.right) l1.push(node.right)
+    }
+    if (l.length) {
+      list.push(l)
+      l = []
+    }
   }
   return list
 }
