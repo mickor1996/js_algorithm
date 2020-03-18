@@ -24,10 +24,5 @@
 //   }
 //   return cnt
 // }
-let j = 12
-j = j.toString()
-while (j.indexOf('1') != -1) {
-  console.log(j.indexOf('1'))
-  j[j.indexOf('1')] = '0'
-  cnt++
-}
+a = [1, 2]
+console.log(a[-1])
