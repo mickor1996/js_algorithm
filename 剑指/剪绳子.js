@@ -10,7 +10,8 @@
 // 输出
 // 18
 function cutRope(number) {
-  if (number <= 4) return number
+  if (number == 2) return 1
+  if (number == 3) return 2
   const map = new Map()
   map.set(1, 1)
   for (let i = 2; i <= number; i++) {
