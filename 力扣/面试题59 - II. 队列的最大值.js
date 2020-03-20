@@ -28,7 +28,8 @@ MaxQueue.prototype.push_back = function (value) {
  * @return {number}
  */
 MaxQueue.prototype.pop_front = function () {
-  let temp = this.queue.pop()
+  if (this.queue.length == 0) return -1
+  let temp = this.queue.shift()
   if (temp == this.queue_max[0]) {
     this.queue_max.shift()
   }
