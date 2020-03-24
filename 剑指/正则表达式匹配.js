@@ -15,4 +15,5 @@ function match(s, pattern) {
     return flag && match(s.slice(1), pattern.slice(1))
   }
 }
+console.log(new RegExp('^' + '.a' + '$'))
 console.log(match('a', '.a'))

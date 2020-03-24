@@ -1,2 +1,2 @@
-var arr = new Array(10).fill(new Array(10).fill(0));
-console.log(arr)
+if (!undefined) console.log(true)
+console.log(false) 
