@@ -3,44 +3,39 @@
   * @param inputs string字符串 01组成的字符串
   * @return int整型
   */
-//  function min_monitors( inputs ) {
-//   // write code here
-//   let sum = 0
-//   inputs=inputs.split('')
-//   return inputs.filter(item=>item==1).length/2
-// }
 function min_monitors(inputs) {
-  // write code here
-  let l = []
-  let temp = []
-  inputs = inputs.split("")
-
+  let real = []
   let i = 0
   let j = 1
-  let k = 2
-  l.push(parseInt(inputs[0]))
+  let k = 1
+  real.push(parseInt(inputs[0]))
   while (j < inputs.length) {
-
-    if (l[i] == '0') {
-      temp.push(0)
-      temp.push(0)
-      i += 2
-    } else {
-      temp.push(parseInt(inputs[j]))
-      j++
-      i += 2
-      temp.push(parseInt(inputs[j]))
-      j++
-
+    if (i >= k) {
+      k = 2 * k + 1
     }
-    if (i == k) {
-      k = (k + 1) * 2
-      l = l.concat(temp)
-      temp = []
+    if (real[i] == 1) {
+      real.push(parseInt(inputs[j]))
+      if (j + 1 < inputs.length) {
+        real.push(parseInt(inputs[j + 1]))
+      } else {
+        real.push(0)
+      }
+
+      j += 2
+      i++
+    } else {
+      real.push(0)
+      real.push(0)
+      i++
     }
   }
+  for (let n = 0; n < k - i; n++) {
+    real.push(0)
+    real.push(0)
+  }
+  return real
 }
 module.exports = {
   min_monitors: min_monitors
 };
-min_monitors("101101101")
+console.log(min_monitors("101101101"))
